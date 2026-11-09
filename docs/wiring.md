@@ -22,6 +22,8 @@ you fit the needle.
 | <span class="wire yellow"></span>**Yellow** | The tach signal, from **any one** of the sources below. |
 
 !!! warning "Before you connect anything"
+    **Negative-ground cars only.** A 1959 Sprite was positive earth when it left the factory; if yours has not been converted to negative earth, do not fit the kit.
+
     The 12 V must switch off with the key. Leave the fuse in the pigtail.
 
 These are the kit's own colours, not the car's. To find the matching wires on your car, check your car's wiring

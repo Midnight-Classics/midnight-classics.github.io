@@ -36,6 +36,10 @@ and the tach signal can come from the coil's negative terminal (points or electr
 terminal, or the tach output of an ignition module or an engine computer (12 V or 5 V). It does not read an
 alternator's W terminal or a raw sensor pickup. See [Wiring](wiring.md).
 
+## Will it work on a positive-ground (positive-earth) car?
+
+No. The kit is for negative-ground cars only. A 1959 Sprite was positive earth when new unless it has since been converted to negative earth. Check before you wire anything: on a negative-ground car the battery's negative post is strapped to the body.
+
 ## Do I need the original mechanism?
 
 No. The module replaces it. But do not throw it away: bag the mechanism and the old screws and keep them. Do not
