@@ -19,7 +19,7 @@ the manual shows them all.
 
 ## Where is my serial number?
 
-On a sticker on the module's mount (the white bracket on the back of the module). The mount ends up inside the
+On a sticker on the module's mount (the bracket on the back of the module). The mount ends up inside the
 gauge case, so it is worth writing the number down before you fit the module in step 13.
 
 ## What does the fuse do?
