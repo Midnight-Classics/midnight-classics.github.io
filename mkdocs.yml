@@ -1,0 +1,61 @@
+site_name: Midnight Classics
+site_url: https://midnight-classics.github.io/
+site_description: Online manual, wiring, FAQ and support for the Digital Smiths Tach Conversion kit.
+
+nav:
+  - Home: index.md
+  - The manual: manual.md
+  - Wiring: wiring.md
+  - Fitting the needle: needle.md
+  - FAQ: faq.md
+  - Troubleshooting: troubleshooting.md
+  - Support: support.md
+
+theme:
+  name: material
+  language: en
+  logo: assets/logo.svg
+  favicon: assets/favicon.png
+  font: false            # system fonts: nothing fetched from Google, fast on a weak signal
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - search.suggest
+    - search.highlight
+    - navigation.top
+    - navigation.footer
+    - toc.integrate
+
+extra_css:
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/booklet.js
+
+extra:
+  generator: false
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: false
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search

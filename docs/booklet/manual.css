@@ -1,0 +1,92 @@
+/* Digital Smiths Tach Conversion - Installation booklet. A6 landscape (148 x 105 mm), 16 pages, saddle-stitched,
+   bound on the LEFT short edge; one step per page. No external resources: system fonts only, prints offline.
+   Sizes are the A5 booklet's scaled by about 0.7 (A5 210 -> A6 148). */
+:root {
+  --ink: #1b1b1b;
+  --paper: #ffffff;
+  --accent: #E53935;          /* the one call-out colour (arrows, rings, leader lines in the pictures) */
+  --page-w: 134mm;            /* A6 landscape 148 x 105 minus 8 mm (spine side) + 6 mm (outer) */
+  --page-h: 93mm;             /* ... minus 6 mm top and bottom */
+}
+* { box-sizing: border-box; }
+html { background: #d8d8d8; }
+body {
+  margin: 0; color: var(--ink); background: transparent;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  line-height: 1.25;
+}
+
+/* ---- a page: picture on top, number + caption underneath ---- */
+.page {
+  width: var(--page-w); height: var(--page-h);
+  display: flex; flex-direction: column;
+  background: var(--paper); overflow: hidden;
+}
+/* the figure is a size container, so the picture box (.pic) can be the largest 2:1 box that fits it, and the parts
+   insets, placed in % of .pic, sit on the picture's own corner whether the picture is width- or height-limited */
+.page figure { position: relative; margin: 0; flex: 1 1 auto; min-height: 0; display: flex; align-items: center;
+  justify-content: center; background: none; container-type: size; }
+.page figure .pic { position: relative; width: min(100cqw, 200cqh); aspect-ratio: 2 / 1; flex: 0 0 auto; }
+.page figure .pic > img { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; }
+/* boxed parts inset: top-left of the picture, 30 % of its width (57 of 190 mm, as on A5), never over the caption */
+.page figure .pic > img.inset { top: 1.58%; left: 0; width: 30%; height: auto; }
+.page figure .pic > img.inset.right { left: auto; right: 0; }        /* step 13: over panel 2's empty top right */
+.page figure .pic > img.inset.small { width: 24.5%; }              /* step 13: the merged page's panels are 0.82 x */
+.page .foot { flex: 0 0 auto; display: flex; align-items: center; gap: 4mm; padding-top: 1.5mm; }
+.step-no {
+  flex: 0 0 auto; width: 14mm; height: 14mm; line-height: 12.3mm; text-align: center;
+  font-size: 24pt; font-weight: 700; border: 0.85mm solid var(--ink); border-radius: 2.1mm;
+}
+.caption { margin: 0; font-size: 11pt; font-weight: 600; flex: 1 1 auto; }
+/* step 3's caption: three lines, one per wire, each led by a square swatch of the lead's colour (owner 2026-11-08) */
+.caption.wires { line-height: 1.15; }
+.caption.wires .w { display: block; }
+.caption.wires .sw { display: inline-block; width: 0.62em; height: 0.62em; margin-right: 0.35em; vertical-align: 0.02em;
+  border: 0.25mm solid var(--ink); }
+.warning {
+  flex: 0 0 auto; margin: 1.5mm 0 0; padding: 1.6mm 3mm;
+  font-size: 12.5pt; font-weight: 700; border: 0.85mm solid var(--ink);
+  text-align: center; line-height: 1.2;
+}
+/* each sentence stays whole, so a centred warning wraps between sentences, never mid-sentence */
+.warning .s { display: inline-block; }
+/* the yellow caution triangle that leads every warning: inline SVG (prints offline), a little taller than the
+   cap height and centred on it, so it sits on the first line */
+.warning .caution { display: inline-block; width: 1.1em; height: 0.96em; vertical-align: -0.13em; margin-right: 0.3em; }
+/* a page with a boxed warning gives the picture a little less room */
+.page.has-warning .step-no { width: 11.5mm; height: 11.5mm; line-height: 9.8mm; font-size: 19.5pt; }
+
+/* ---- cover and back ---- */
+.cover, .back { text-align: center; }
+.cover h1 { margin: 0; font-size: 19.5pt; line-height: 1.1; }
+.cover .sub { margin: 0.7mm 0 0; font-size: 14pt; font-weight: 600; }
+.cover .rev { margin: 1mm 0 0; font-size: 11pt; font-weight: 600; }
+.cover .ver { margin: 0.7mm 0 0; font-size: 8.5pt; }
+/* the back page: the QR code and one line under it, "Digital manual and instructions" (owner 2026-11-08), set as a
+   caption; no URL, no support text */
+.back { align-items: center; justify-content: center; gap: 3mm; }
+.back figure { flex: 0 0 auto; container-type: normal; }
+/* qr.svg is 37 modules (29 + 4-module quiet zone each side); 51.03 mm puts the dark modules at 40 mm square */
+.back figure img { width: 51.03mm; height: 51.03mm; display: block; }
+.back .caption { flex: 0 0 auto; }
+
+/* ---- screen: pages as stacked cards ---- */
+@media screen {
+  body { padding: 8mm 0; display: flex; flex-direction: column; align-items: center; gap: 6mm; }
+  .page { box-shadow: 0 1mm 4mm rgba(0, 0, 0, .35); outline: 7mm solid var(--paper); margin: 7mm 0; }
+}
+
+/* ---- print ----
+   Bound along the TOP long edge, calendar style (pages flip up). With the open book read upright the odd (recto)
+   page is the LOWER panel, spine at its top; the even (verso) page is the UPPER panel, printed turned 180 degrees
+   by the shop's imposition, spine at its bottom. Page 1 (the cover) is a right-hand page, so odd pages have the
+   spine on top and even pages at the bottom; the spine side gets 8 mm, the other three sides 6 mm. */
+@page { size: 148mm 105mm; margin: 6mm; }      /* A6 landscape: "A6" is not a CSS page-size name (Edge falls back to Letter) */
+@page :right { margin-top: 8mm; margin-bottom: 6mm; }
+@page :left { margin-top: 6mm; margin-bottom: 8mm; }
+@media print {
+  html, body { background: #fff; padding: 0; margin: 0; display: block; }
+  .page { box-shadow: none; outline: none; margin: 0; height: 90.9mm; break-after: page; page-break-after: always; }
+  .page:last-of-type { break-after: auto; page-break-after: auto; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

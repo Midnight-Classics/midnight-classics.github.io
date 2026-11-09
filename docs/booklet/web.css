@@ -1,0 +1,51 @@
+/* Midnight Classics site: wrapper for the booklet's own manual.css (which is copied unchanged).
+
+   The booklet's pages are fixed sizes: 134 x 93 mm, with captions in pt and boxes in mm. On a phone that is wider
+   than the screen. This file redefines those sizes on screen in a unit --u that is 1 mm on a wide screen and shrinks
+   below that so a whole page, its white margin included, fits the viewport width. The pictures already scale with
+   the page (manual.css sizes them in container units), so only the boxes and the type need restating here.
+
+   Every number below is manual.css's own value in mm (pt are converted: 1 pt = 0.35278 mm). If a booklet rebuild
+   changes a size in manual.css, change it here too. Print is untouched. */
+@media screen {
+  :root {
+    /* 134 mm page + 2 x 3 mm white margin = 140 units, less a small gutter each side */
+    --u: min(1mm, calc((100vw - 16px) / 140));
+  }
+  html { background: #d8d8d8; }
+  body { padding: calc(4 * var(--u)) 0; gap: calc(4 * var(--u)); }
+
+  .page {
+    width: calc(134 * var(--u));
+    height: calc(93 * var(--u));
+    outline: calc(3 * var(--u)) solid var(--paper);
+    margin: calc(3 * var(--u)) 0;
+    box-shadow: 0 calc(1 * var(--u)) calc(4 * var(--u)) rgba(0, 0, 0, .35);
+  }
+
+  .page .foot { gap: calc(4 * var(--u)); padding-top: calc(1.5 * var(--u)); }
+  .step-no {
+    width: calc(14 * var(--u)); height: calc(14 * var(--u)); line-height: calc(12.3 * var(--u));
+    font-size: calc(8.467 * var(--u));                 /* 24 pt */
+    border-width: calc(0.85 * var(--u)); border-radius: calc(2.1 * var(--u));
+  }
+  .page.has-warning .step-no {
+    width: calc(11.5 * var(--u)); height: calc(11.5 * var(--u)); line-height: calc(9.8 * var(--u));
+    font-size: calc(6.879 * var(--u));                 /* 19.5 pt */
+  }
+  .caption { font-size: calc(3.881 * var(--u)); }      /* 11 pt */
+  .caption.wires .sw { border-width: calc(0.25 * var(--u)); }
+  .warning {
+    margin-top: calc(1.5 * var(--u));
+    padding: calc(1.6 * var(--u)) calc(3 * var(--u));
+    font-size: calc(4.410 * var(--u));                 /* 12.5 pt */
+    border-width: calc(0.85 * var(--u));
+  }
+
+  .cover h1 { font-size: calc(6.879 * var(--u)); }     /* 19.5 pt */
+  .cover .sub { margin-top: calc(0.7 * var(--u)); font-size: calc(4.939 * var(--u)); }   /* 14 pt */
+  .cover .rev { margin-top: calc(1 * var(--u)); font-size: calc(3.881 * var(--u)); }     /* 11 pt */
+  .cover .ver { margin-top: calc(0.7 * var(--u)); font-size: calc(2.999 * var(--u)); }   /* 8.5 pt */
+  .back { gap: calc(3 * var(--u)); }
+  .back figure img { width: calc(51.03 * var(--u)); height: calc(51.03 * var(--u)); }
+}

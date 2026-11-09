@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Digital Smiths Tach Conversion — Installation</title>
+<link rel="stylesheet" href="manual.css">
+<link rel="stylesheet" href="web.css">
+</head>
+<body>
+<!-- One <section class="page"> per printed page. Edit captions here; pictures live in frames/. -->
+
+<section class="page cover" id="cover">
+  <figure><div class="pic"><img src="frames/cover.png" alt="The finished gauge: black case, chrome bezel and glass, faceplate with the needle resting on the zero pin"></div></figure>
+  <h1>Digital Smiths Tach Conversion</h1>
+  <p class="sub">Installation</p>
+  <p class="rev">Rev C1</p>
+  <p class="ver">Manual v0.1 draft · 2026-11-08</p>
+</section>
+
+<section class="page" id="p01">
+  <figure><div class="pic"><img src="frames/01-box-contents.png" alt="The box contents: the module, its circuit board's chips showing on the front, with its leads and plug 1, the car-side pigtail with its connector and fuse holder 1, M1.6 cheese-head screws 2, M4 slotted cheese-head screws 2, 0.95 mm drill bit in its vial 1"></div></figure>
+  <div class="foot"><span class="step-no">1</span><p class="caption">Check the box.</p></div>
+</section>
+
+<section class="page" id="p02">
+  <figure><div class="pic"><img src="frames/02-tools.png" alt="Tools: two flat-blade screwdrivers, a medium one and a very small one; a wire stripper and crimper; a pin vise with the drill bit in it; a USB-C cable and a wall charger; a table fork; a drill press drawn dashed, labelled helpful, not required"></div></figure>
+  <div class="foot"><span class="step-no">2</span><p class="caption">You will need these. A drill press helps but is not required.</p></div>
+</section>
+
+<section class="page has-warning" id="p03">
+  <figure><div class="pic"><img src="frames/03-wiring.png" alt="The car-side pigtail: red lead through an open switch to SW 12 V+ (switched by the key), black lead to battery negative (ground symbol), yellow lead to any one of three car-side panels: the coil's minus terminal, an HEI module's TACH terminal, or an ignition module's or ECU's tach signal; the HEI is a distributor with its black cap, plug towers, coil cover, side connector, housing and vacuum can"><img class="inset" src="frames/inset-03.png" alt="Parts: the car-side pigtail, 1"></div></figure>
+  <div class="foot"><span class="step-no">3</span><p class="caption wires"><span class="w"><span class="sw" style="background:#D84040"></span>Red = switched 12&nbsp;V+</span><span class="w"><span class="sw" style="background:#3A3C40"></span>Black = ground</span><span class="w"><span class="sw" style="background:#F2C230"></span>Yellow = tach signal (any one of these)</span></p></div>
+  <p class="warning"><span class="s"><svg class="caution" viewBox="0 0 26 23" aria-hidden="true"><path d="M13 1.6 24.6 21.4H1.4Z" fill="#F5C518" stroke="#000" stroke-width="2" stroke-linejoin="round"/><rect x="11.7" y="7.4" width="2.6" height="8" rx="1.2"/><circle cx="13" cy="18.2" r="1.5"/></svg>12&nbsp;V must switch off with the key.</span> <span class="s">Leave the fuse in the pigtail.</span></p>
+</section>
+
+<section class="page" id="p04">
+  <figure><div class="pic"><img src="frames/04-bezel-stack.png" alt="The buyer's gauge as it came out of the dash, nothing out of the back of the case: four parts exploded forward off it, outer bezel, glass, the O-ring seal, inner bezel; a short curved arrow turning the outer bezel a few degrees counter-clockwise, and one arrow pulling them off"></div></figure>
+  <div class="foot"><span class="step-no">4</span><p class="caption">Remove the bezel stack: outer bezel, glass, seal, inner bezel.</p></div>
+</section>
+
+<section class="page" id="p05">
+  <figure><div class="pic"><img src="frames/05-lift-mechanism.png" alt="The mechanism lifting out of the case with the rubber spacer on its back, the light tunnel loose in the case; boxed rear view: the two old screws coming out with their washers"></div></figure>
+  <div class="foot"><span class="step-no">5</span><p class="caption">Undo the two rear screws and lift the whole mechanism out, faceplate and needle still attached. Mind the light tunnel.</p></div>
+</section>
+
+<section class="page" id="p06">
+  <figure><div class="pic"><img src="frames/06-needle-fork.png" alt="The faceplate on the old mechanism seen from low in front, a fork slid flat under the needle's hub from the side away from the blade, the needle riding up on its tines; boxed side view of the hub: the tines under the brass, one arrow lifting the needle up the shaft"></div></figure>
+  <div class="foot"><span class="step-no">6</span><p class="caption">Lift the needle off with a fork.</p></div>
+</section>
+
+<section class="page" id="p07">
+  <figure><div class="pic"><img src="frames/07-faceplate-off.png" alt="Two faceplate screws coming out and the faceplate lifting off the mechanism, the rubber spacer on its back"></div></figure>
+  <div class="foot"><span class="step-no">7</span><p class="caption">Undo the two faceplate screws and lift the faceplate off. Bag the mechanism and the old screws — keep them.</p></div>
+</section>
+
+<section class="page has-warning" id="p08">
+  <figure><div class="pic"><img src="frames/08-hub-bore.png" alt="The needle lying back-up: the open back of its black cup shows the brass plate and the small brass bush at its centre; the drill bit comes straight down onto the bush, one arrow along it"><img class="inset" src="frames/inset-08.png" alt="Parts: The drill bit, 1"></div></figure>
+  <div class="foot"><span class="step-no">8</span><p class="caption">Use the supplied 0.95&nbsp;mm bit to bore through the brass centre of the needle (roughly 3&nbsp;mm), then slowly work the hole until it presses firmly on the motor shaft.</p></div>
+  <p class="warning"><span class="s"><svg class="caution" viewBox="0 0 26 23" aria-hidden="true"><path d="M13 1.6 24.6 21.4H1.4Z" fill="#F5C518" stroke="#000" stroke-width="2" stroke-linejoin="round"/><rect x="11.7" y="7.4" width="2.6" height="8" rx="1.2"/><circle cx="13" cy="18.2" r="1.5"/></svg>This step cannot be undone.</span> <span class="s">Go slowly.</span></p>
+</section>
+
+<section class="page" id="p09">
+  <figure><div class="pic"><img src="frames/09-cylinder-switch.png" alt="Back of the module from below, its leads coming out of the mount: the cylinder slide switch lying flat at the bottom rim, magnified: the slide tab sticking out of its inboard side at the 4 end, legend 4 6 8 below"></div></figure>
+  <div class="foot"><span class="step-no">9</span><p class="caption">Set the cylinder switch to match your engine: 4, 6 or 8 cylinders.</p></div>
+</section>
+
+<section class="page has-warning" id="p10">
+  <figure><div class="pic"><img src="frames/10-fit-faceplate.png" alt="The faceplate on the module, two M1.6 screws going into its holes; one screw magnified"><img class="inset" src="frames/inset-10.png" alt="Parts: the faceplate 1, M1.6 cheese-head screws 2"></div></figure>
+  <div class="foot"><span class="step-no">10</span><p class="caption">Fit the faceplate to the module with the two new M1.6 screws.</p></div>
+  <p class="warning"><span class="s"><svg class="caution" viewBox="0 0 26 23" aria-hidden="true"><path d="M13 1.6 24.6 21.4H1.4Z" fill="#F5C518" stroke="#000" stroke-width="2" stroke-linejoin="round"/><rect x="11.7" y="7.4" width="2.6" height="8" rx="1.2"/><circle cx="13" cy="18.2" r="1.5"/></svg>Do not overtighten!</span></p>
+</section>
+
+<section class="page" id="p11">
+  <figure><div class="pic"><img src="frames/11-press-cal.png" alt="Two ways to power the module, each seen from the back with a red circle on the CAL tab: A, a USB-C cable in the socket on the board's flat; B, the module's plug in the car-side pigtail's connector, the key turned on; one magnified box at the top between them, joined to both circles, shows CAL being pressed"></div></figure>
+  <div class="foot"><span class="step-no">11</span><p class="caption">Power the module either way: USB-C from any charger, or the car with the key on. Press CAL once and wait a second.</p></div>
+</section>
+
+<section class="page" id="p12">
+  <figure><div class="pic"><img src="frames/12-fit-needle.png" alt="Three frames. 1, large: the faceplate on the module seen from low in front, the 0 nearest; the needle held over the shaft, pointing between the 0 and 5 marks, an arrow pushing it on. 2: the module from the back, the USB-C cable still in, pressing CAL. 3: the faceplate from the front, the needle swinging from where it was pushed on back to the zero pin"><img class="inset" src="frames/inset-12.png" alt="Parts: the needle, 1"></div></figure>
+  <div class="foot"><span class="step-no">12</span><p class="caption">Push the needle on between the 0 and 5 marks, then press CAL again. The needle drives to 0.</p></div>
+</section>
+
+<section class="page" id="p13">
+  <figure><div class="pic"><img src="frames/13-put-back.png" alt="Two frames. 1: looking into the empty case, the light tunnel going into its hole in the floor at the bottom, a red ring on the hole. 2: the module lowering into the case beside the light tunnel, the rubber spacer on the back of its mount, its leads fed down through the case and out of the centre hole at the back; a boxed view of the case from behind: the leads coming out of the centre hole, the two M4 screws going in, each with an original washer under its head"><img class="inset right small" src="frames/inset-13.png" alt="Parts: M4 slotted cheese-head screws 2, the original rubber spacer 1"></div></figure>
+  <div class="foot"><span class="step-no">13</span><p class="caption">Seat the light tunnel in line with the high-beam window. Unplug the module, feed its leads out through the centre hole and lower it in with the original rubber spacer. From the back, fit the two M4 screws with the original washers.</p></div>
+</section>
+
+<section class="page" id="p14">
+  <figure><div class="pic"><img src="frames/14-bezel-refit.png" alt="The bezel stack going back on in reverse order, a short curved arrow turning the outer bezel a few degrees clockwise to lock it, the leads hanging out of the back of the case"></div></figure>
+  <div class="foot"><span class="step-no">14</span><p class="caption">Refit the bezel stack, the reverse of step 4.</p></div>
+</section>
+
+<section class="page back" id="back">
+  <figure><img src="qr.svg" alt="QR code to the online copy of the manual"></figure>
+  <p class="caption">Digital manual and instructions</p>
+</section>
+
+</body>
+</html>

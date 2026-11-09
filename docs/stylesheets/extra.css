@@ -1,0 +1,50 @@
+/* Midnight Classics: a calm midnight blue, readable on a phone in a garage. */
+:root {
+  --md-primary-fg-color: #1B263B;
+  --md-primary-fg-color--light: #2C3A55;
+  --md-primary-fg-color--dark: #111827;
+  --md-accent-fg-color: #3D6FB6;
+}
+[data-md-color-scheme="slate"] {
+  --md-hue: 220;
+  --md-primary-fg-color: #1B263B;
+  --md-accent-fg-color: #8DB4F0;
+  --md-typeset-a-color: #9DBDF0;
+}
+
+/* buttons: the midnight primary vanishes on the dark page, so dark mode uses the light link blue */
+[data-md-color-scheme="slate"] .md-typeset .md-button { color: var(--md-typeset-a-color); border-color: currentColor; }
+[data-md-color-scheme="slate"] .md-typeset .md-button--primary {
+  background-color: #3D6FB6; border-color: #3D6FB6; color: #fff;
+}
+
+/* slightly larger body text for reading at arm's length */
+.md-typeset { font-size: .85rem; line-height: 1.65; }
+
+/* header logo: a little taller than the default */
+.md-header__button.md-logo img { height: 1.6rem; }
+
+/* home page link cards: big, easy to hit with a thumb */
+.md-typeset .grid.cards > ul > li { padding: 1rem 1.1rem; }
+.md-typeset .grid.cards > ul > li > p:first-child { font-size: 1.05rem; font-weight: 700; margin-top: 0; }
+.md-typeset .grid.cards > ul > li > p:first-child a { display: block; }
+
+/* the booklet's pictures are drawn on a white page (transparent PNGs): keep them on white in dark mode too */
+.md-typeset img.booklet-pic {
+  display: block; width: 100%; height: auto;
+  background: #fff; border-radius: .4rem; padding: .4rem;
+  box-shadow: 0 0 0 1px var(--md-default-fg-color--lightest);
+}
+
+/* the embedded booklet */
+.booklet-frame {
+  display: block; width: 100%; height: 80vh;
+  border: 0; border-radius: .4rem; background: #d8d8d8;
+}
+
+/* the colour swatch in front of each wire */
+.wire { display: inline-block; width: .9em; height: .9em; margin-right: .4em; vertical-align: -.1em;
+  border: 1px solid #1b1b1b; border-radius: 2px; }
+.wire.red { background: #D84040; }
+.wire.black { background: #3A3C40; }
+.wire.yellow { background: #F2C230; }
